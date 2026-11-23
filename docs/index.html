@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bid Watcher</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔨</text></svg>">
+<style>
+  :root {
+    --bg: #f6f5f2; --card: #ffffff; --ink: #1c1b19; --muted: #6d6a64; --line: #e4e1db;
+    --accent: #c2410c; --accent-soft: #fff1e8; --ok: #15803d; --ok-soft: #e9f7ee;
+    --bad: #b91c1c; --bad-soft: #fdecec; --closed: #57534e; --closed-soft: #efedea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312; --card: #1d1c1a; --ink: #f1efea; --muted: #a29e96; --line: #2f2d2a;
+      --accent: #fb923c; --accent-soft: #3a2416; --ok: #4ade80; --ok-soft: #15291c;
+      --bad: #f87171; --bad-soft: #3a1a1a; --closed: #a8a29e; --closed-soft: #292725;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 16px 60px; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; justify-content: space-between; }
+  h1 { margin: 0; font-size: 24px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); margin-right: 6px; vertical-align: 1px; }
+  .dot.live { background: var(--ok); } .dot.bad { background: var(--bad); }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink); text-decoration: none;
+    font-weight: 500; font-size: 14px; cursor: pointer; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { filter: brightness(0.97); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 24px 0; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .stat .k { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat .v { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; margin-top: 2px; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .chip { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card);
+    color: var(--muted); font-size: 13px; cursor: pointer; }
+  .chip.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column; }
+  .card.fresh { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .top { display: flex; gap: 12px; padding: 14px; }
+  .thumb { width: 76px; height: 76px; flex: none; border-radius: 10px; background: var(--closed-soft) center/cover no-repeat; }
+  .title { font-weight: 600; font-size: 14px; line-height: 1.3; overflow-wrap: anywhere; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-top: 6px; }
+  .badge.open { background: var(--ok-soft); color: var(--ok); }
+  .badge.closed { background: var(--closed-soft); color: var(--closed); }
+  .badge.error { background: var(--bad-soft); color: var(--bad); }
+  .badge.new { background: var(--accent-soft); color: var(--accent); margin-left: 4px; }
+  .nums { display: grid; grid-template-columns: 1.3fr 1fr 1fr; border-top: 1px solid var(--line); }
+  .nums > div { padding: 10px 14px; min-width: 0; }
+  .nums > div + div { border-left: 1px solid var(--line); }
+  .cur { font-size: 11px; font-weight: 500; color: var(--muted); margin-left: 3px; }
+  .nums .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .nums .v { font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .nums .big { font-size: 20px; }
+  .spark { padding: 4px 14px 0; height: 46px; }
+  .spark svg { width: 100%; height: 40px; display: block; }
+  .foot { display: flex; justify-content: space-between; gap: 8px; padding: 10px 14px; border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--muted); margin-top: auto; }
+  .foot a { color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap; }
+  .err { color: var(--bad); font-size: 12px; padding: 0 14px 10px; overflow-wrap: anywhere; }
+  .empty { text-align: center; color: var(--muted); padding: 60px 16px; border: 1px dashed var(--line); border-radius: 14px; }
+  .help { margin-top: 28px; color: var(--muted); font-size: 13px; }
+  .help code { background: var(--card); border: 1px solid var(--line); padding: 1px 6px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>🔨 Bid Watcher</h1>
+      <div class="sub" id="status"><span class="dot"></span>Loading…</div>
+    </div>
+    <div class="actions">
+      <a class="btn primary" id="add" target="_blank" rel="noopener">+ Add / remove listings</a>
+      <a class="btn" id="runs" target="_blank" rel="noopener">Runs</a>
+      <button class="btn" id="refresh" type="button">Refresh</button>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="k">Watching</div><div class="v" id="s-total">–</div></div>
+    <div class="stat"><div class="k">Open</div><div class="v" id="s-open">–</div></div>
+    <div class="stat"><div class="k">Bids, last 24h</div><div class="v" id="s-recent">–</div></div>
+    <div class="stat"><div class="k">Closed</div><div class="v" id="s-closed">–</div></div>
+  </div>
+
+  <div class="toolbar" id="filters">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="open">Open</button>
+    <button class="chip" data-f="recent">New bids (24h)</button>
+    <button class="chip" data-f="closed">Closed</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <p class="help">
+    To watch a listing, click <b>Add / remove listings</b>, paste the HiBid lot URL on a new line, and click
+    <b>Commit changes</b>. It shows up here after the next check (about 5 minutes). The first check only records
+    the current bid; you're emailed from the next change. This page refreshes itself every minute.
+  </p>
+</div>
+
+<script>
+  // ---- settings: your GitHub repo ----
+  const OWNER = "harshil3134";
+  const REPO = "bid-watcher";
+  const BRANCH = "main";
+  // ------------------------------------
+
+  const local = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+  const STATE_URL = local ? "../state.json" : `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/state.json`;
+  const RUNS_API = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/watch.yml/runs?per_page=1`;
+  document.getElementById("add").href = `https://github.com/${OWNER}/${REPO}/edit/${BRANCH}/lots.txt`;
+  document.getElementById("runs").href = `https://github.com/${OWNER}/${REPO}/actions/workflows/watch.yml`;
+
+  let lots = [], filter = "all";
+  const DAY = 86400e3;
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const num = n => (n || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const money = (n, c) => `${num(n)}${c ? `<span class="cur">${esc(c)}</span>` : ""}`;
+  function ago(iso) {
+    if (!iso) return "never";
+    const s = Math.max(0, (Date.now() - new Date(iso)) / 1000);
+    if (s < 60) return "just now";
+    if (s < 3600) return `${Math.floor(s / 60)} min ago`;
+    if (s < 86400) return `${Math.floor(s / 3600)} h ago`;
+    return `${Math.floor(s / 86400)} d ago`;
+  }
+  function lastBidAt(l) {
+    const h = l.history || [];
+    return h.length > 1 ? h[h.length - 1].t : null; // first entry is the baseline, not a bid we saw
+  }
+  const isRecent = l => { const t = lastBidAt(l); return t && Date.now() - new Date(t) < DAY; };
+  function closeText(l) {
+    if (!l.auction_close) return "";
+    const d = new Date(l.auction_close); // auctioneer's local time, no zone given
+    if (isNaN(d)) return "";
+    return "Closes from " + d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  }
+
+  function spark(l) {
+    const h = (l.history || []).map(p => p.high);
+    if (h.length < 2) return `<div class="spark"></div>`;
+    const W = 280, H = 40, max = Math.max(...h), min = Math.min(...h), span = max - min || 1;
+    const pts = h.map((v, i) => `${(i / (h.length - 1)) * W},${H - 4 - ((v - min) / span) * (H - 8)}`);
+    return `<div class="spark"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="High bid history">
+      <polyline points="${pts.join(" ")}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    </svg></div>`;
+  }
+
+  function card(l) {
+    const status = l.error ? `<span class="badge error">Can't read</span>`
+      : l.closed ? `<span class="badge closed">Closed</span>` : `<span class="badge open">Open</span>`;
+    const recent = isRecent(l) ? `<span class="badge new">New bid</span>` : "";
+    const price = l.closed ? (l.final || l.high) : l.high;
+    return `<article class="card ${isRecent(l) && !l.closed ? "fresh" : ""}">
+      <div class="top">
+        <div class="thumb" style="${l.image ? `background-image:url('${esc(l.image)}')` : ""}"></div>
+        <div>
+          <div class="title">${esc(l.title)}</div>
+          <div class="meta">${l.lot_number ? `Lot ${esc(l.lot_number)} · ` : ""}${esc(l.auctioneer || "")}</div>
+          ${status}${recent}
+        </div>
+      </div>
+      ${l.error ? `<div class="err">${esc(l.error)}</div>` : ""}
+      ${l.error && l.bids == null ? "" : `<div class="nums">
+        <div><div class="k">${l.closed ? "Final" : "High bid"}</div><div class="v big">${money(price, l.currency)}</div></div>
+        <div><div class="k">Bids</div><div class="v big">${l.bids ?? "–"}</div></div>
+        <div><div class="k">Next min</div><div class="v">${l.closed ? "–" : money(l.next_min, l.currency)}</div></div>
+      </div>`}
+      ${spark(l)}
+      <div class="foot">
+        <span>${lastBidAt(l) ? "Last bid seen " + ago(lastBidAt(l)) : "No new bids since added"}${closeText(l) && !l.closed ? " · " + esc(closeText(l)) : ""}</span>
+        <a href="${esc(l.url)}" target="_blank" rel="noopener">Open ↗</a>
+      </div>
+    </article>`;
+  }
+
+  function render() {
+    const show = lots.filter(l => filter === "all" ? true
+      : filter === "open" ? !l.closed && !l.error
+      : filter === "closed" ? l.closed
+      : isRecent(l));
+    const order = l => (l.closed ? 2 : 0) + (isRecent(l) ? 0 : 1);
+    show.sort((a, b) => order(a) - order(b) || (new Date(lastBidAt(b) || 0) - new Date(lastBidAt(a) || 0)));
+    document.getElementById("grid").innerHTML = show.length ? show.map(card).join("")
+      : `<div class="empty">${lots.length ? "Nothing matches this filter." : "No listings yet. Click <b>Add / remove listings</b> to add a HiBid lot URL."}</div>`;
+    document.getElementById("s-total").textContent = lots.length;
+    document.getElementById("s-open").textContent = lots.filter(l => !l.closed && !l.error).length;
+    document.getElementById("s-closed").textContent = lots.filter(l => l.closed).length;
+    document.getElementById("s-recent").textContent = lots.reduce((n, l) =>
+      n + (l.history || []).slice(1).filter(p => Date.now() - new Date(p.t) < DAY).length, 0);
+  }
+
+  async function load() {
+    const st = document.getElementById("status");
+    try {
+      const r = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+      lots = r.ok ? Object.values(await r.json()) : [];
+      render();
+    } catch (e) {
+      st.innerHTML = `<span class="dot bad"></span>Couldn't load state.json`;
+      return;
+    }
+    if (local) { st.innerHTML = `<span class="dot live"></span>Local preview`; return; }
+    try {
+      const run = (await (await fetch(RUNS_API)).json()).workflow_runs?.[0];
+      if (!run) throw 0;
+      const ok = run.conclusion === "success" || run.status !== "completed";
+      const mins = (Date.now() - new Date(run.updated_at)) / 60000;
+      st.innerHTML = `<span class="dot ${ok && mins < 30 ? "live" : "bad"}"></span>Last check ${ago(run.updated_at)}`
+        + (ok ? "" : " · it failed, see Runs") + (mins >= 30 ? " · checks look stalled" : "");
+    } catch { st.innerHTML = `<span class="dot"></span>Checks every ~5 min`; }
+  }
+
+  document.getElementById("filters").addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    filter = b.dataset.f;
+    document.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c === b));
+    render();
+  });
+  document.getElementById("refresh").addEventListener("click", load);
+  load();
+  setInterval(load, 60000);
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# One HiBid lot URL per line. Lines starting with # are ignored.
+# Add a line to start watching, delete it to stop.
+https://encoreauctions.hibid.com/lot/332534068/logitech-lift-vertical-wireless-mouse---graphi
