@@ -105,7 +105,7 @@
   <p class="help">
     To watch a listing, click <b>Add / remove listings</b>, paste the HiBid lot URL on a new line, and click
     <b>Commit changes</b>. It shows up here after the next check (about 5 minutes). The first check only records
-    the current bid; you're emailed from the next change. This page refreshes itself every minute.
+    the current bid; you're emailed from the next change. This page refreshes itself every 3 minutes.
   </p>
 </div>
 
@@ -117,7 +117,7 @@
   // ------------------------------------
 
   const local = ["localhost", "127.0.0.1", ""].includes(location.hostname);
-  const STATE_URL = local ? "../state.json" : `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/state.json`;
+  const DATA_SRC = local ? "../state.json" : `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/state.json`;
   const RUNS_API = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/watch.yml/runs?per_page=1`;
   document.getElementById("add").href = `https://github.com/${OWNER}/${REPO}/edit/${BRANCH}/lots.txt`;
   document.getElementById("runs").href = `https://github.com/${OWNER}/${REPO}/actions/workflows/watch.yml`;
@@ -202,10 +202,20 @@
       n + (l.history || []).slice(1).filter(p => Date.now() - new Date(p.t) < DAY).length, 0);
   }
 
+  // The branch URL on raw.githubusercontent is cached ~5 min; the URL of the latest commit isn't.
+  async function freshUrl() {
+    if (local) return DATA_SRC;
+    try {
+      const c = await (await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits?path=state.json&per_page=1`)).json();
+      if (c[0]?.sha) return `https://raw.githubusercontent.com/${OWNER}/${REPO}/${c[0].sha}/state.json`;
+    } catch {}
+    return DATA_SRC + "?t=" + Date.now();
+  }
+
   async function load() {
     const st = document.getElementById("status");
     try {
-      const r = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+      const r = await fetch(await freshUrl());
       lots = r.ok ? Object.values(await r.json()) : [];
       render();
     } catch (e) {
@@ -231,7 +241,7 @@
   });
   document.getElementById("refresh").addEventListener("click", load);
   load();
-  setInterval(load, 60000);
+  setInterval(load, 180000);
 </script>
 </body>
 </html>

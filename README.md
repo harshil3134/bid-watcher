@@ -26,7 +26,7 @@ To send anywhere else, verify a domain in Resend and change `EMAIL_FROM` in `wat
 
 ## Notes
 - Uses HiBid's public GraphQL endpoint (`/graphql`, `lot` query), the same one the site uses.
-- The dashboard reads `state.json` from GitHub (cached up to ~5 min) and the latest run from the GitHub API.
+- The dashboard reads the newest commit of `state.json` from GitHub (no cache lag) and the latest run from the GitHub API.
 - Keep the repo **public**: Actions minutes are unlimited for public repos. A private repo
   gets 2,000 free minutes/month, and every-5-minutes uses about 8,600.
 - GitHub turns off scheduled workflows in repos with no activity for 60 days; re-enable in the Actions tab.
