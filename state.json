@@ -8,9 +8,9 @@
     "auctioneer": "Encore Auctions Inc",
     "auction_close": "2026-11-29T12:00:00",
     "currency": "CAD",
-    "bids": 2,
-    "high": 3.0,
-    "next_min": 4.0,
+    "bids": 4,
+    "high": 5.0,
+    "next_min": 6.0,
     "closed": false,
     "seconds_left": 0,
     "final": 0,
@@ -25,11 +25,16 @@
         "t": "2026-11-23T16:28:53+00:00",
         "high": 3.0,
         "bids": 2
+      },
+      {
+        "t": "2026-11-24T23:15:09+00:00",
+        "high": 5.0,
+        "bids": 4
       }
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534068/logitech-lift-vertical-wireless-mouse---graphi",
     "added": "2026-11-23T05:44:35+00:00",
-    "checked": "2026-11-24T02:59:53+00:00",
+    "checked": "2026-11-24T23:15:09+00:00",
     "error": ""
   },
   "332533172": {
@@ -67,7 +72,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332533172/monarch-specialties-computer-desk--l-shape--br",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-24T02:59:53+00:00",
+    "checked": "2026-11-24T23:15:09+00:00",
     "error": ""
   },
   "332401660": {
@@ -79,9 +84,9 @@
     "auctioneer": "Encore Auctions Inc",
     "auction_close": "2026-11-29T12:00:00",
     "currency": "CAD",
-    "bids": 11,
-    "high": 16.0,
-    "next_min": 17.0,
+    "bids": 17,
+    "high": 28.0,
+    "next_min": 29.0,
     "closed": false,
     "seconds_left": 0,
     "final": 0,
@@ -101,11 +106,16 @@
         "t": "2026-11-24T02:59:53+00:00",
         "high": 16.0,
         "bids": 11
+      },
+      {
+        "t": "2026-11-24T23:15:09+00:00",
+        "high": 28.0,
+        "bids": 17
       }
     ],
     "url": "https://encoreauctions.hibid.com/lot/332401660/bexevue-40-x24--standing-desk--electric",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-24T02:59:53+00:00",
+    "checked": "2026-11-24T23:15:09+00:00",
     "error": ""
   },
   "332534644": {
@@ -117,9 +127,9 @@
     "auctioneer": "Encore Auctions Inc",
     "auction_close": "2026-11-29T12:00:00",
     "currency": "CAD",
-    "bids": 5,
-    "high": 5.0,
-    "next_min": 6.0,
+    "bids": 6,
+    "high": 6.0,
+    "next_min": 7.0,
     "closed": false,
     "seconds_left": 0,
     "final": 0,
@@ -139,11 +149,16 @@
         "t": "2026-11-24T02:59:53+00:00",
         "high": 5.0,
         "bids": 5
+      },
+      {
+        "t": "2026-11-24T23:15:09+00:00",
+        "high": 6.0,
+        "bids": 6
       }
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534644/grandder-gaming-desk-40--with-power-outlet",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-24T02:59:53+00:00",
+    "checked": "2026-11-24T23:15:09+00:00",
     "error": ""
   }
 }
