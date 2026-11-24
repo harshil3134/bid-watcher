@@ -29,7 +29,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534068/logitech-lift-vertical-wireless-mouse---graphi",
     "added": "2026-11-23T05:44:35+00:00",
-    "checked": "2026-11-23T16:28:53+00:00",
+    "checked": "2026-11-24T02:59:53+00:00",
     "error": ""
   },
   "332533172": {
@@ -37,72 +37,6 @@
     "title": "MONARCH SPECIALTIES COMPUTER DESK, L-SHAPE, BR",
     "lot_number": "3119",
     "image": "https://cdn.hibid.com/img.axd?id=8469924572&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=xdexpqa2dxAsxjduC07x142i%2bXuvR%2fit&h=350&w=350",
-    "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
-    "auctioneer": "Encore Auctions Inc",
-    "auction_close": "2026-11-29T12:00:00",
-    "currency": "CAD",
-    "bids": 1,
-    "high": 1.0,
-    "next_min": 2.0,
-    "closed": false,
-    "seconds_left": 0,
-    "final": 0,
-    "warned_soon": false,
-    "history": [
-      {
-        "t": "2026-11-23T06:06:24+00:00",
-        "high": 0,
-        "bids": 0
-      },
-      {
-        "t": "2026-11-23T06:25:53+00:00",
-        "high": 1.0,
-        "bids": 1
-      }
-    ],
-    "url": "https://encoreauctions.hibid.com/lot/332533172/monarch-specialties-computer-desk--l-shape--br",
-    "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-23T16:28:53+00:00",
-    "error": ""
-  },
-  "332401660": {
-    "id": "332401660",
-    "title": "BEXEVUE 40\"X24\" STANDING DESK, ELECTRIC",
-    "lot_number": "1584",
-    "image": "https://cdn.hibid.com/img.axd?id=8469065259&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=QRC6TwgpMYKhlLrOpb8NNDNCJize595O&h=350&w=350",
-    "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
-    "auctioneer": "Encore Auctions Inc",
-    "auction_close": "2026-11-29T12:00:00",
-    "currency": "CAD",
-    "bids": 6,
-    "high": 6.0,
-    "next_min": 7.0,
-    "closed": false,
-    "seconds_left": 0,
-    "final": 0,
-    "warned_soon": false,
-    "history": [
-      {
-        "t": "2026-11-23T06:06:24+00:00",
-        "high": 5.0,
-        "bids": 5
-      },
-      {
-        "t": "2026-11-23T16:28:53+00:00",
-        "high": 6.0,
-        "bids": 6
-      }
-    ],
-    "url": "https://encoreauctions.hibid.com/lot/332401660/bexevue-40-x24--standing-desk--electric",
-    "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-23T16:28:53+00:00",
-    "error": ""
-  },
-  "332534644": {
-    "id": "332534644",
-    "title": "GRANDDER GAMING DESK 40\" WITH POWER OUTLET",
-    "lot_number": "4595",
-    "image": "https://cdn.hibid.com/img.axd?id=8469943093&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=K96eSIZPLDvbA4kbsA8Iz25wzDg4ouTr&h=350&w=350",
     "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
     "auctioneer": "Encore Auctions Inc",
     "auction_close": "2026-11-29T12:00:00",
@@ -117,6 +51,82 @@
     "history": [
       {
         "t": "2026-11-23T06:06:24+00:00",
+        "high": 0,
+        "bids": 0
+      },
+      {
+        "t": "2026-11-23T06:25:53+00:00",
+        "high": 1.0,
+        "bids": 1
+      },
+      {
+        "t": "2026-11-24T02:59:53+00:00",
+        "high": 2.0,
+        "bids": 2
+      }
+    ],
+    "url": "https://encoreauctions.hibid.com/lot/332533172/monarch-specialties-computer-desk--l-shape--br",
+    "added": "2026-11-23T06:06:24+00:00",
+    "checked": "2026-11-24T02:59:53+00:00",
+    "error": ""
+  },
+  "332401660": {
+    "id": "332401660",
+    "title": "BEXEVUE 40\"X24\" STANDING DESK, ELECTRIC",
+    "lot_number": "1584",
+    "image": "https://cdn.hibid.com/img.axd?id=8469065259&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=QRC6TwgpMYKhlLrOpb8NNDNCJize595O&h=350&w=350",
+    "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
+    "auctioneer": "Encore Auctions Inc",
+    "auction_close": "2026-11-29T12:00:00",
+    "currency": "CAD",
+    "bids": 11,
+    "high": 16.0,
+    "next_min": 17.0,
+    "closed": false,
+    "seconds_left": 0,
+    "final": 0,
+    "warned_soon": false,
+    "history": [
+      {
+        "t": "2026-11-23T06:06:24+00:00",
+        "high": 5.0,
+        "bids": 5
+      },
+      {
+        "t": "2026-11-23T16:28:53+00:00",
+        "high": 6.0,
+        "bids": 6
+      },
+      {
+        "t": "2026-11-24T02:59:53+00:00",
+        "high": 16.0,
+        "bids": 11
+      }
+    ],
+    "url": "https://encoreauctions.hibid.com/lot/332401660/bexevue-40-x24--standing-desk--electric",
+    "added": "2026-11-23T06:06:24+00:00",
+    "checked": "2026-11-24T02:59:53+00:00",
+    "error": ""
+  },
+  "332534644": {
+    "id": "332534644",
+    "title": "GRANDDER GAMING DESK 40\" WITH POWER OUTLET",
+    "lot_number": "4595",
+    "image": "https://cdn.hibid.com/img.axd?id=8469943093&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=K96eSIZPLDvbA4kbsA8Iz25wzDg4ouTr&h=350&w=350",
+    "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
+    "auctioneer": "Encore Auctions Inc",
+    "auction_close": "2026-11-29T12:00:00",
+    "currency": "CAD",
+    "bids": 5,
+    "high": 5.0,
+    "next_min": 6.0,
+    "closed": false,
+    "seconds_left": 0,
+    "final": 0,
+    "warned_soon": false,
+    "history": [
+      {
+        "t": "2026-11-23T06:06:24+00:00",
         "high": 1.0,
         "bids": 1
       },
@@ -124,11 +134,16 @@
         "t": "2026-11-23T16:28:53+00:00",
         "high": 2.0,
         "bids": 2
+      },
+      {
+        "t": "2026-11-24T02:59:53+00:00",
+        "high": 5.0,
+        "bids": 5
       }
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534644/grandder-gaming-desk-40--with-power-outlet",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-23T16:28:53+00:00",
+    "checked": "2026-11-24T02:59:53+00:00",
     "error": ""
   }
 }
