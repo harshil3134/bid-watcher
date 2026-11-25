@@ -34,7 +34,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534068/logitech-lift-vertical-wireless-mouse---graphi",
     "added": "2026-11-23T05:44:35+00:00",
-    "checked": "2026-11-25T05:28:17+00:00",
+    "checked": "2026-11-25T13:01:05+00:00",
     "error": ""
   },
   "332533172": {
@@ -77,7 +77,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332533172/monarch-specialties-computer-desk--l-shape--br",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-25T05:28:17+00:00",
+    "checked": "2026-11-25T13:01:05+00:00",
     "error": ""
   },
   "332401660": {
@@ -120,7 +120,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332401660/bexevue-40-x24--standing-desk--electric",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-25T05:28:17+00:00",
+    "checked": "2026-11-25T13:01:05+00:00",
     "error": ""
   },
   "332534644": {
@@ -163,7 +163,61 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534644/grandder-gaming-desk-40--with-power-outlet",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-25T05:28:17+00:00",
+    "checked": "2026-11-25T13:01:05+00:00",
+    "error": ""
+  },
+  "332970341": {
+    "id": "332970341",
+    "title": "BEXEVUE 40-INCH WHITE GAMING DESK WITH OUTLET",
+    "lot_number": "11069",
+    "image": "https://cdn.hibid.com/img.axd?id=8471129054&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=aVNu39LwN3veHFLsAwRMnbDGpGlpmtaq&h=350&w=350",
+    "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
+    "auctioneer": "Encore Auctions Inc",
+    "auction_close": "2026-11-29T12:00:00",
+    "currency": "CAD",
+    "bids": 0,
+    "high": 0,
+    "next_min": 1.0,
+    "closed": false,
+    "seconds_left": 0,
+    "final": 0,
+    "history": [
+      {
+        "t": "2026-11-25T13:01:05+00:00",
+        "high": 0,
+        "bids": 0
+      }
+    ],
+    "url": "https://encoreauctions.hibid.com/lot/332970341/bexevue-40-inch-white-gaming-desk-with-outlet",
+    "added": "2026-11-25T13:01:05+00:00",
+    "checked": "2026-11-25T13:01:05+00:00",
+    "error": ""
+  },
+  "332970133": {
+    "id": "332970133",
+    "title": "PAMRAY 50-INCH COMPUTER DESK WITH DRAWERS",
+    "lot_number": "10957",
+    "image": "https://cdn.hibid.com/img.axd?id=8471125867&wid=&rwl=false&p=&ext=&w=0&h=0&t=&lp=&c=true&wt=false&sz=MAX&checksum=Zlk67GyDqmJh7r0b6uYHesWzEluFS1WK&h=350&w=350",
+    "auction": "Canada's Largest Auction: Sunday Mega Liquidation Event!",
+    "auctioneer": "Encore Auctions Inc",
+    "auction_close": "2026-11-29T12:00:00",
+    "currency": "CAD",
+    "bids": 0,
+    "high": 0,
+    "next_min": 1.0,
+    "closed": false,
+    "seconds_left": 0,
+    "final": 0,
+    "history": [
+      {
+        "t": "2026-11-25T13:01:05+00:00",
+        "high": 0,
+        "bids": 0
+      }
+    ],
+    "url": "https://encoreauctions.hibid.com/lot/332970133/pamray-50-inch-computer-desk-with-drawers",
+    "added": "2026-11-25T13:01:05+00:00",
+    "checked": "2026-11-25T13:01:05+00:00",
     "error": ""
   }
 }
