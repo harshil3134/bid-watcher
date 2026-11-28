@@ -12,7 +12,7 @@
     "high": 5.0,
     "next_min": 6.0,
     "closed": false,
-    "seconds_left": 196137.91999999998,
+    "seconds_left": 172203.06,
     "final": 0,
     "warned_soon": false,
     "history": [
@@ -34,7 +34,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534068/logitech-lift-vertical-wireless-mouse---graphi",
     "added": "2026-11-23T05:44:35+00:00",
-    "checked": "2026-11-27T19:28:14+00:00",
+    "checked": "2026-11-28T02:07:09+00:00",
     "error": ""
   },
   "332533172": {
@@ -50,7 +50,7 @@
     "high": 4.0,
     "next_min": 5.0,
     "closed": false,
-    "seconds_left": 183577.65,
+    "seconds_left": 159642.887,
     "final": 0,
     "warned_soon": false,
     "history": [
@@ -82,7 +82,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332533172/monarch-specialties-computer-desk--l-shape--br",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-27T19:28:14+00:00",
+    "checked": "2026-11-28T02:07:09+00:00",
     "error": ""
   },
   "332401660": {
@@ -98,7 +98,7 @@
     "high": 65.0,
     "next_min": 67.5,
     "closed": false,
-    "seconds_left": 201231.37,
+    "seconds_left": 177296.773,
     "final": 0,
     "warned_soon": false,
     "history": [
@@ -150,7 +150,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332401660/bexevue-40-x24--standing-desk--electric",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-27T19:28:14+00:00",
+    "checked": "2026-11-28T02:07:09+00:00",
     "error": ""
   },
   "332534644": {
@@ -166,7 +166,7 @@
     "high": 16.0,
     "next_min": 17.0,
     "closed": false,
-    "seconds_left": 199461.043,
+    "seconds_left": 175526.56699999998,
     "final": 0,
     "warned_soon": false,
     "history": [
@@ -198,7 +198,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332534644/grandder-gaming-desk-40--with-power-outlet",
     "added": "2026-11-23T06:06:24+00:00",
-    "checked": "2026-11-27T19:28:14+00:00",
+    "checked": "2026-11-28T02:07:09+00:00",
     "error": ""
   },
   "332970341": {
@@ -210,11 +210,11 @@
     "auctioneer": "Encore Auctions Inc",
     "auction_close": "2026-11-29T12:00:00",
     "currency": "CAD",
-    "bids": 0,
-    "high": 0,
-    "next_min": 1.0,
+    "bids": 1,
+    "high": 1.0,
+    "next_min": 2.0,
     "closed": false,
-    "seconds_left": 200304.78699999998,
+    "seconds_left": 176370.33,
     "final": 0,
     "warned_soon": false,
     "history": [
@@ -222,11 +222,16 @@
         "t": "2026-11-25T13:01:05+00:00",
         "high": 0,
         "bids": 0
+      },
+      {
+        "t": "2026-11-28T02:07:09+00:00",
+        "high": 1.0,
+        "bids": 1
       }
     ],
     "url": "https://encoreauctions.hibid.com/lot/332970341/bexevue-40-inch-white-gaming-desk-with-outlet",
     "added": "2026-11-25T13:01:05+00:00",
-    "checked": "2026-11-27T19:28:14+00:00",
+    "checked": "2026-11-28T02:07:09+00:00",
     "error": ""
   },
   "332970133": {
@@ -242,7 +247,7 @@
     "high": 2.0,
     "next_min": 3.0,
     "closed": false,
-    "seconds_left": 196754.53,
+    "seconds_left": 172820,
     "final": 0,
     "warned_soon": false,
     "history": [
@@ -259,7 +264,7 @@
     ],
     "url": "https://encoreauctions.hibid.com/lot/332970133/pamray-50-inch-computer-desk-with-drawers",
     "added": "2026-11-25T13:01:05+00:00",
-    "checked": "2026-11-27T19:28:14+00:00",
+    "checked": "2026-11-28T02:07:09+00:00",
     "error": ""
   }
 }
